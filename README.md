@@ -8,11 +8,10 @@
 |:---:|:---:|:---:|:---:|
 |hmm|45.80|||
 |crf||||
-|bilstm+crf||||
+|bilstm+crf|68.05|||
 |bert|78.14||
 |bert+crf|77.18|||
 |bert+span|79.31|||
-|bert+bilstm+crf|||
 
 ## script
 ### 训练
@@ -55,13 +54,11 @@ E: 命名实体的结尾标注
 O: 非命名实体
 S: 单个字命名实体
 
+## 参考文章
+[1] [CLUENER2020](https://github.com/CLUEbenchmark/CLUENER2020)  
+[2] [luopeixiang/named_entity_recognition](https://github.com/luopeixiang/named_entity_recognition)  
 
-## 参考链接
-[1] [CLUENER2020](https://github.com/CLUEbenchmark/CLUENER2020)
-[2] [luopeixiang/named_entity_recognition](https://github.com/luopeixiang/named_entity_recognition)
-[2] Recurrent Neural Network for Text Classification with Multi-Task Learning  
-[3] Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classification  
-[4] Recurrent Convolutional Neural Networks for Text Classification  
-[5] Bag of Tricks for Efficient Text Classification  
-[6] Deep Pyramid Convolutional Neural Networks for Text Categorization  
-[7] Attention Is All You Need  
+## 参考代码
+[1] [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991)  
+[2] [Neural Architectures for Named Entity Recognition](https://arxiv.org/pdf/1603.01360.pdf)  
+[3] [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf) 

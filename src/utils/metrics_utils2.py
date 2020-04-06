@@ -1,3 +1,6 @@
+# coding=utf-8
+# author=yphacker
+
 import torch
 from collections import Counter
 from utils.utils import get_entities

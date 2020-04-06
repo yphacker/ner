@@ -17,12 +17,7 @@ from importlib import import_module
 from conf import config
 from utils.data_utils2 import MyDataset, collate_fn
 from utils.metrics_utils import get_score
-from utils.utils import get_entities
-
-np.random.seed(0)
-torch.manual_seed(0)
-torch.cuda.manual_seed_all(0)
-torch.backends.cudnn.deterministic = True  # 保证每次结果一样
+from utils.utils import set_seed, get_entities
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -246,6 +241,7 @@ def main(op):
 
 
 if __name__ == '__main__':
+    set_seed()
     parser = argparse.ArgumentParser(description='Chinese NER')
     parser.add_argument("-o", "--operation", default='train', type=str, help="operation")
     parser.add_argument("-b", "--batch_size", default=32, type=int, help="batch size")

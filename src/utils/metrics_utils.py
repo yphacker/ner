@@ -1,6 +1,10 @@
+# coding=utf-8
+# author=yphacker
+
 import torch
 from collections import Counter
 from utils.utils import get_entities
+from conf import config
 
 
 class SeqEntityScore(object):
@@ -51,16 +55,13 @@ class SeqEntityScore(object):
         '''
         for label_path, pre_path in zip(label_paths, pred_paths):
             label_entities = get_entities(label_path, self.id2label, self.markup)
-            print(label_entities)
             pre_entities = get_entities(pre_path, self.id2label, self.markup)
-            print(pre_entities)
             self.origins.extend(label_entities)
             self.founds.extend(pre_entities)
             self.rights.extend([pre_entity for pre_entity in pre_entities if pre_entity in label_entities])
 
 
 def get_score(y_true_list, y_pred_list):
-    from conf import config
     metric = SeqEntityScore(config.id2label, markup='bios')
     metric.update(y_true_list, y_pred_list)
 
